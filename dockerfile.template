@@ -4,6 +4,9 @@ ARG UID=1000
 ARG GID=1000
 
 ENV \
+DEBIAN_VERSION="{{ env.from }}" \
+DEBIAN_VARIANT="{{ env.variant }}" \
+SUPERVISOR_LOG_LEVEL="warn" \
 SUPERVISOR_LOG_LEVEL="warn" \
 SUPERVISOR_LOG_FILE="/proc/self/fd/1" \
 SUPERVISOR_USERNAME="rootless" \
