@@ -11,8 +11,8 @@ ARG UID=1000
 ARG GID=1000
 
 ENV \
-DEBIAN_VERSION="debian:bullseye-slim" \
-DEBIAN_VARIANT="bullseye" \
+VERSION="100.0.0" \
+VARIANT="bullseye" \
 SUPERVISOR_LOG_LEVEL="warn" \
 SUPERVISOR_LOG_LEVEL="warn" \
 SUPERVISOR_LOG_FILE="/proc/self/fd/1" \
