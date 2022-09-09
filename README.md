@@ -1,4 +1,4 @@
-# OPS Linux
+# OPS DEBIAN
 
 Create your linux debian templates in an automated way 
 
