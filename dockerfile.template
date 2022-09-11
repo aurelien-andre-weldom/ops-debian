@@ -4,8 +4,8 @@ ARG UID=1000
 ARG GID=1000
 
 ENV \
-VERSION="{{ env.version }}" \
-VARIANT="{{ env.variant }}" \
+DEBIAN_VERSION="{{ env.version }}" \
+DEBIAN_VARIANT="{{ env.variant }}" \
 SUPERVISOR_LOG_LEVEL="warn" \
 SUPERVISOR_LOG_LEVEL="warn" \
 SUPERVISOR_LOG_FILE="/proc/self/fd/1" \
