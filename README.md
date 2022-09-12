@@ -14,17 +14,17 @@ Include supervisord stack
 
 ```json
 {
-  "100.0.1": {
+  "bullseye": {
     "variants": [
-      "bullseye"
+      "slim"
     ],
-    "version": "100.0.1"
+    "version": "bullseye"
   },
-  "100.0.0": {
+  "buster": {
     "variants": [
-      "bullseye"
+      "slim"
     ],
-    "version": "100.0.0"
+    "version": "buster"
   }
 }
 ```
@@ -68,7 +68,7 @@ SUPERVISOR_FILES="/etc/supervisor/conf.d/*.conf"
 ### Test
 
 ```shell
-docker run -it --rm --name ops-debian -p 9001:9001 ops-debian/debian:latest
+docker run -it --rm --name ops-debian -p 9001:9001 ops-debian/debian:bullseye-slim
 ```
 
 @see http://localhost:9001
@@ -76,13 +76,13 @@ docker run -it --rm --name ops-debian -p 9001:9001 ops-debian/debian:latest
 ### Supervisor
 
 ```shell
-docker run -it --rm --name ops-debian ops-debian/debian:latest supervisorctl help
+docker run -it --rm --name ops-debian ops-debian/debian:bullseye-slim supervisorctl help
 ```
 
 ### Terraform
 
 ```dockerfile
-FROM ops-debian/debian:latest
+FROM ops-debian/debian:bullseye-slim
 
 USER root
 
