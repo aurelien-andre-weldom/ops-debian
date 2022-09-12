@@ -81,6 +81,8 @@ RUN set -eux; \
 chmod +x -R \
 /usr/bin/docker-*
 
+WORKDIR /var/www
+
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 STOPSIGNAL SIGQUIT
