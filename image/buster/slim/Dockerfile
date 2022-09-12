@@ -5,14 +5,14 @@
 #
 # @see https://github.com/aurelien-andre-weldom/ops-debian
 #
-FROM debian:bullseye-slim
+FROM debian:buster-slim
 
 ARG UID=1000
 ARG GID=1000
 
 ENV \
-DEBIAN_VERSION="100.0.1" \
-DEBIAN_VARIANT="bullseye" \
+DEBIAN_VERSION="buster" \
+DEBIAN_VARIANT="slim" \
 SUPERVISOR_LOG_LEVEL="warn" \
 SUPERVISOR_LOG_LEVEL="warn" \
 SUPERVISOR_LOG_FILE="/proc/self/fd/1" \
@@ -46,8 +46,6 @@ echo "rootless:rootless:${UID}:${GID}:/rootless:/usr/bin" >> /etc/passwd; \
 echo "rootless::${GID}:rootless" >> /etc/group
 
 COPY --chown=rootless:rootless system .
-
-# Do something only for version 100.0.1
 
 RUN set -eux; \
 mkdir -p \

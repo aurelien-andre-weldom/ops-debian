@@ -1,14 +1,14 @@
 {
-  "100.0.1": {
+  "bullseye": {
     "variants": [
-      "bullseye"
+      "slim"
     ],
-    "version": "100.0.1"
+    "version": "bullseye"
   },
-  "100.0.0": {
+  "buster": {
     "variants": [
-      "bullseye"
+      "slim"
     ],
-    "version": "100.0.0"
+    "version": "buster"
   }
 }

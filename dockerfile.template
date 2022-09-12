@@ -40,12 +40,6 @@ echo "rootless::${GID}:rootless" >> /etc/group
 
 COPY --chown=rootless:rootless system .
 
-{{ if env.version == "100.0.1" then ( -}}
-# Do something only for version 100.0.1
-{{ ) else ( -}}
-# Do something for other versions
-{{ ) end -}}
-
 RUN set -eux; \
 mkdir -p \
 /etc/supervisor \

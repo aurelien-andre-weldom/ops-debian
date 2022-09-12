@@ -46,15 +46,15 @@ Edit dockerfile.template
 
 ```shell
 # Update all versions
-MASTER_VERSION=100.0.1 \
-MASTER_VARIANT=bullseye \
+MASTER_VERSION=bullseye \
+MASTER_VARIANT=slim \
 bash run-update.sh
 ```
 
 ```shell
 # Build all docker images
-MASTER_VERSION=100.0.1 \
-MASTER_VARIANT=bullseye \
+MASTER_VERSION=bullseye \
+MASTER_VARIANT=slim \
 bash run-build.sh
 ```
 

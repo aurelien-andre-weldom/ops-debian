@@ -41,10 +41,6 @@ for version; do
 
     if [ "$MASTER_VERSION" = "$version" ] && [ "$MASTER_VARIANT" = "$variant" ]; then
 
-      echo "build ops-debian/debian:$version ..."
-
-      docker build . -t "ops-debian/debian:$version" >/dev/null
-
       echo "build ops-debian/debian:latest ..."
 
       docker build . -t "ops-debian/debian:latest" >/dev/null

@@ -11,8 +11,8 @@ ARG UID=1000
 ARG GID=1000
 
 ENV \
-DEBIAN_VERSION="100.0.0" \
-DEBIAN_VARIANT="bullseye" \
+DEBIAN_VERSION="bullseye" \
+DEBIAN_VARIANT="slim" \
 SUPERVISOR_LOG_LEVEL="warn" \
 SUPERVISOR_LOG_LEVEL="warn" \
 SUPERVISOR_LOG_FILE="/proc/self/fd/1" \
@@ -46,8 +46,6 @@ echo "rootless:rootless:${UID}:${GID}:/rootless:/usr/bin" >> /etc/passwd; \
 echo "rootless::${GID}:rootless" >> /etc/group
 
 COPY --chown=rootless:rootless system .
-
-# Do something for other versions
 
 RUN set -eux; \
 mkdir -p \

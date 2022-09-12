@@ -41,7 +41,7 @@ for version; do
 
     export variant
 
-    from="debian:$variant-slim"
+    from="debian:$version-$variant"
 
     export from
 
