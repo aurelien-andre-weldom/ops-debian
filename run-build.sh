@@ -1,6 +1,8 @@
 #!/bin/bash
 set -Eeuo pipefail
 
+: "${project:=adeo}"
+
 # wget -qO ".jq-template.awk" 'https://github.com/docker-library/bashbrew/raw/9f6a35772ac863a0241f147c820354e4008edf38/scripts/jq-template.awk'
 
 [ -f versions.json ] # run "versions.sh" first
@@ -31,9 +33,9 @@ for version; do
 
     cd "$root/image/$version/$variant"
 
-    echo "build ops-debian/debian:$version-$variant ..."
+    echo "build $project/ops-debian/$version:$variant ..."
 
-    docker build . -t "ops-debian/debian:$version-$variant" >/dev/null
+    docker build . -t "$project/ops-debian/$version:$variant" >/dev/null
 
   done
 

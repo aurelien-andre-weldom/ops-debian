@@ -11,14 +11,10 @@ ARG UID=1000
 ARG GID=1000
 
 ENV \
-DEBIAN_VERSION="bullseye" \
-DEBIAN_VARIANT="slim" \
-SUPERVISOR_LOG_LEVEL="warn" \
 SUPERVISOR_LOG_LEVEL="warn" \
 SUPERVISOR_LOG_FILE="/proc/self/fd/1" \
 SUPERVISOR_USERNAME="rootless" \
 SUPERVISOR_PASSWORD="nopassword" \
-SUPERVISOR_PORT="9001" \
 SUPERVISOR_FILES="/etc/supervisor/conf.d/*.conf"
 
 RUN set -eux; \
@@ -86,8 +82,6 @@ WORKDIR /var/www
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 STOPSIGNAL SIGQUIT
-
-EXPOSE 9001
 
 CMD ["supervisord"]
 

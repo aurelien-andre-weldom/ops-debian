@@ -61,30 +61,19 @@ SUPERVISOR_LOG_LEVEL="warn" \
 SUPERVISOR_LOG_FILE="/proc/self/fd/1" \
 SUPERVISOR_USERNAME="rootless" \
 SUPERVISOR_PASSWORD="nopassword" \
-SUPERVISOR_PORT="9001" \
 SUPERVISOR_FILES="/etc/supervisor/conf.d/*.conf"
 ```
 
 ### Test
 
 ```shell
-docker run -it --rm --name ops-debian -p 9001:9001 ops-debian/debian:bullseye-slim
-```
-
-@see 
-
-http://localhost:9001
-
-### Supervisor
-
-```shell
-docker run -it --rm --name ops-debian ops-debian/debian:bullseye-slim supervisorctl help
+docker run -it --rm --name ops-debian adeo/ops-debian/bullseye:slim supervisorctl help
 ```
 
 ### Terraform
 
 ```dockerfile
-FROM ops-debian/debian:bullseye-slim
+FROM adeo/ops-debian/bullseye:slim
 
 USER root
 
@@ -105,8 +94,6 @@ COPY --chown=rootless:rootless supervisor/*.conf /etc/supervisor/conf.d
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 STOPSIGNAL SIGQUIT
-
-EXPOSE 9001
 
 CMD ["supervisord"]
 

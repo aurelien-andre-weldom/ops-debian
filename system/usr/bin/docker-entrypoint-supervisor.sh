@@ -11,7 +11,7 @@ for file in $files; do
 
     for e in "${!SUPERVISOR_@}"; do
 
-        sed -i -e 's!__'"$e"'__!'"$(printenv "$e")"'!g' "$file"
+        sed -i 's!__'"$e"'__!'"$(printenv "$e")"'!g' "$file"
 
     done
 

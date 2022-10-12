@@ -7,11 +7,11 @@ while [ $counter -le 3 ]; do
 
   exit=0
 
-  while IFS= read -r health; do
+  while IFS= read -r script; do
 
-    if [ -f "/usr/bin/$health" ]; then
+    if [ -f "/usr/bin/$script" ]; then
 
-      exit=$(bash "$health" "$@")
+      exit=$(bash "$script" "$@")
 
       if [ "$exit" != "0" ]; then
 

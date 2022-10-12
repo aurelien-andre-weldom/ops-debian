@@ -3,11 +3,11 @@ set -e
 
 if [ "$1" = 'supervisord' ]; then
 
-  while IFS= read -r entrypoint; do
+  while IFS= read -r script; do
 
-    if [ -f "/usr/bin/$entrypoint" ]; then
+    if [ -f "/usr/bin/$script" ]; then
 
-      bash "$entrypoint" "$@"
+      bash "$script" "$@"
 
     fi
 
