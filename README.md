@@ -98,8 +98,14 @@ USER rootless
 
 ### Health Check
 
+Test 
+
 ```shell
-until docker-health.sh >/dev/null 2>&1; do (>&2 echo "Waiting supervisor processes..."); sleep 1; done
+# into container
+until docker-health.sh >/dev/null 2>&1; 
+do (>&2 echo "Waiting supervisor processes..."); 
+sleep 1; 
+done
 ```
 
 Usage 
