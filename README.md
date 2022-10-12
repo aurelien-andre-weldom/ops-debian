@@ -29,10 +29,6 @@ Include supervisord stack
 }
 ```
 
-Like php
-
-@see https://github.com/docker-library/php/blob/master/Dockerfile-linux.template
-
 ### Requirements
 
 ```shell
@@ -98,4 +94,18 @@ STOPSIGNAL SIGQUIT
 CMD ["supervisord"]
 
 USER rootless
+```
+
+### Health Check
+
+```shell
+until docker-health.sh >/dev/null 2>&1; do (>&2 echo "Waiting supervisor processes..."); sleep 1; done
+```
+
+Usage 
+
+@see https://rancher.com/docs/rancher/v2.0-v2.4/en/v1.6-migration/monitor-apps/#additional-probing-options
+
+```shell
+/usr/bin/docker-health.sh
 ```
